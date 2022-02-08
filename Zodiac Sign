@@ -120,7 +120,7 @@ int main() {
             }
             break;
         default:
-            cout << "Now tell me which month was assigned to " << month << " -_-....\nNOW RESTART!\n";
+            cout << "Now tell me which month was assigned to [" << month << "] -_-....\nNOW RESTART!\n";
             int x;
             for(x = 3; x >= 0; x--){
                 cout << x << endl;
