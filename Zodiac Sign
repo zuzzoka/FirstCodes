@@ -1,0 +1,136 @@
+#include <iostream>
+#include <chrono>
+#include <thread>
+using namespace std;
+using namespace chrono_literals;
+using namespace chrono;
+using namespace this_thread;
+int main() {
+    cout << "Hello, nice to meet you, so you want to know your zodiac sign?\nyes or no :";
+    string yOn;
+    cin >> yOn;
+    string sign;
+    int day;
+    int month;
+    if(yOn == "yes" || "Yes"){
+        cout << "Great, what day were you born :";
+        cin >> day;
+        if(day > 31){
+            cout << "Tell me... WHICH MONTH HAS MORE THAN 31 DAYS!....\nNOW RESTART!\n";
+            sleep_for(seconds(1));
+            int z;
+            for(z = 3; z >= 0; z--) {
+                cout << z << endl;
+                sleep_for(seconds(1));
+            }
+            return 0;
+        }
+        cout << "great, which month were you born, please choose a number next to the month!\n";
+        cout << "[0] January,  [1] February,  [2] March,  [3] April,  [4] May,  [5] June,  [6] July\n[7] August,  [8] September,  [9] October,  [10] November,  [11] December\nMonth :";
+        cin >> month;
+
+    } else {
+        cout << "Okay have a great day / night!";
+        return 0;
+    }
+    switch(month) {
+        case 0:
+            if(day >= 20){
+                sign = "Aquarius";
+            } else {
+                sign = "Capricorn";
+            }
+            break;
+        case 1:
+            if(day >= 19){
+                sign = "Pisces";
+            } else {
+                sign = "Aquarius";
+            }
+            break;
+        case 2:
+            if(day >= 21){
+                sign = "Aries";
+            } else {
+                sign = "Pisces";
+            }
+            break;
+        case 3:
+            if(day >= 20){
+                sign = "Taurus";
+            } else {
+                sign = "Aries";
+            }
+            break;
+        case 4:
+            if(day >= 21){
+                sign = "Gemini";
+            } else {
+                sign = "Taurus";
+            }
+            break;
+        case 5:
+            if(day >= 22){
+                sign = "Cancer";
+            } else {
+                sign = "Gemini";
+            }
+            break;
+        case 6:
+            if(day >= 23){
+                sign = "Leo";
+            } else {
+                sign = "Cancer";
+            }
+            break;
+        case 7:
+            if(day >= 23){
+                sign = "Virgo";
+            } else {
+                sign = "Leo";
+            }
+            break;
+        case 8:
+            if(day >= 23){
+                sign = "Libra";
+            } else {
+                sign = "Virgo";
+            }
+            break;
+        case 9:
+            if(day >= 24){
+                sign = "Scorpion";
+            } else {
+                sign = "Libra";
+            }
+            break;
+        case 10:
+            if(day >= 22){
+                sign = "Sagittarius";
+            } else {
+                sign = "Scorpion";
+            }
+            break;
+        case 11:
+            if(day >= 22){
+                sign = "Capricorn";
+            } else {
+                sign = "Sagittarius";
+            }
+            break;
+        default:
+            cout << "You didnt even enter the right number bozo -_-....\nNOW RESTART!\n";
+            int x;
+            for(x = 3; x >= 0; x--){
+                cout << x << endl;
+                sleep_for(seconds(1));
+            }
+            return 0;
+    }
+
+    cout << "You are a " << sign;
+
+
+
+    return 0;
+}
