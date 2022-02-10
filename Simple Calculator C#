@@ -1,0 +1,71 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Testing
+{
+    internal class Program
+    {
+     
+        static void Main(string[] args)
+        {
+            double num1;
+            double num2;
+            string Operator;
+            Console.WriteLine("Hello please enter two numbers that are 1-100");
+            do
+            {
+                Console.Write("Number 1:");
+                num1 = Convert.ToDouble(Console.ReadLine());
+                if (num1 > 100)
+                {
+                    Console.WriteLine("Please re-enter a number under 100.");
+                } else if (num1 < 1)
+                {
+                    Console.WriteLine("Please re-enter a number over 1");
+                }
+            } while (num1 < 1 || num1 > 100);
+            do
+            {
+                Console.Write("Number 2:");
+                num2 = Convert.ToDouble(Console.ReadLine());
+                if (num2 > 100)
+                {
+                    Console.WriteLine("Please re-enter a number under 100.");
+                }
+                else if (num2 < 1)
+                {
+                    Console.WriteLine("Please re-enter a number over 1");
+                }
+            } while (num1 < 2 || num2 > 100);
+
+            Console.WriteLine("Great now enter an Operator to perform between the two numbers");
+                do
+            {
+                Console.Write("Operator :");
+                Operator = Console.ReadLine();
+                if (!(Operator == "*" || Operator == "+" || Operator == "/" || Operator == "-"))
+                {
+                    Console.WriteLine("That is not a valid operator, please use *, +, -, /");
+                }
+            } while (!(Operator == "*" || Operator == "+" || Operator == "/" || Operator == "-"));
+            Console.Write(num1 + " " + Operator + " " + num2 + " = ");
+            if (Operator == "+")
+            {
+                Console.WriteLine(num1 + num2);
+            }
+            else if (Operator == "*")
+            {
+                Console.WriteLine(num1 * num2);
+            } else if (Operator == "-") {
+                Console.WriteLine(num1 - num2);
+            } else
+            { 
+                Console.WriteLine(num1 / num2);
+            }
+            Console.ReadLine();
+        }
+    }
+}
